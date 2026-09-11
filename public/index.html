@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز</title>
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #198754;
+      --bg-color: #f4f6f9;
+      --accent-color: #d63384;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: #333;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 850px;
+      margin: 25px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    h2 {
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 8px;
+      color: var(--primary-color);
+      font-size: 20px;
+    }
+    .book-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .book-card {
+      border: 1px solid #e0e0e0;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: calc(50% - 8px);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+    @media (max-width: 600px) {
+      .book-card {
+        width: 100%;
+      }
+    }
+    .book-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .book-price {
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    button {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #146c43;
+    }
+    .cart-box, .checkout-box {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px dashed #ddd;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    .total-price-box {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin: 15px 0;
+      text-align: left;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      background-color: var(--primary-color);
+    }
+    .submit-btn:hover {
+      background-color: #0b5ed7;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز</h1>
+  <p>سکولز آن لائن آرڈر پورٹل (چکوال)</p>
+</header>
+
+<div class="container">
+  <h2>کتابوں کی کیٹلاگ (Book Catalogue)</h2>
+  <div id="books-container" class="book-grid">کتابیں لوڈ ہو رہی ہیں...</div>
+
+  <div class="cart-box">
+    <h2>منتخب کردہ سامان (Cart)</h2>
+    <div id="cart-list">کوئی کتاب منتخب نہیں کی گئی۔</div>
+    <div class="total-price-box">کل رقم: Rs. <span id="total-amount">0</span></div>
+  </div>
+
+  <div class="checkout-box">
+    <h2>سکول کی تفصیلات اور آرڈر فارم</h2>
+    <input type="text" id="school-name" placeholder="سکول کا نام اور برانچ درج کریں" required>
+    <input type="text" id="phone-number" placeholder="واٹس ایپ نمبر (مثلاً 923001234567)" required>
+    
+    <label for="payment-months"><strong>ادائیگی کا دورانیہ منتخب کریں (Payment Period):</strong></label>
+    <select id="payment-months">
+      <option value="1 Month">1 ماہ کی مدت (1 Month Period)</option>
+      <option value="2 Months">2 ماہ کی مدت (2 Months Period)</option>
+      <option value="3 Months">3 ماہ کی مدت (3 Months Period)</option>
+      <option value="4 Months">4 ماہ کی مدت (4 Months Period)</option>
+    </select>
+
+    <button class="submit-btn" onclick="submitOrder()">آرڈر کنفرم کریں اور واٹس ایپ انوائس حاصل کریں</button>
+  </div>
+</div>
+
+<script>
+  let cart = [];
+  let total = 0;
+
+  async function fetchBooks() {
+    try {
+      const response = await fetch('/api/books');
+      const data = await response.json();
+      const container = document.getElementById('books-container');
+      container.innerHTML = '';
+      
+      data.books.forEach(book => {
+        container.innerHTML += `
+          <div class="book-card">
+            <div>
+              <div class="book-title">${book.title}</div>
+              <div class="book-price">Rs. ${book.price}</div>
+            </div>
+            <button onclick="addToCart('${book.title}', ${book.price})">کارٹ میں شامل کریں</button>
+          </div>
+        `;
+      });
+    } catch (e) {
+      document.getElementById('books-container').innerText = 'ڈیٹا لوڈ کرنے میں مسئلہ پیش آیا۔ براہ کرم پیج ریفریش کریں۔';
+    }
+  }
+
+  function addToCart(title, price) {
+    cart.push({ title, price });
+    total += price;
+    updateCartUI();
+  }
+
+  function updateCartUI() {
+    document.getElementById('total-amount').innerText = total;
+    const cartList = document.getElementById('cart-list');
+    if (cart.length === 0) {
+      cartList.innerHTML = 'کوئی کتاب منتخب نہیں کی گئی۔';
+      return;
+    }
+    cartList.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <span>${item.title}</span>
+        <span>Rs. ${item.price}</span>
+      </div>
+    `).join('');
+  }
+
+  async function submitOrder() {
+    const schoolName = document.getElementById('school-name').value.trim();
+    const phone = document.getElementById('phone-number').value.trim();
+    const paymentMonths = document.getElementById('payment-months').value;
+
+    if (!schoolName || !phone || cart.length === 0) {
+      alert('براہ کرم سکول کا نام، واٹس ایپ نمبر درج کریں اور کم از کم ایک کتاب کارٹ میں شامل کریں۔');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ schoolName, phone, items: cart, totalAmount: total, paymentMonths })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        window.open(result.whatsappUrl, '_blank');
+      } else {
+        alert('آرڈر میں مسئلہ آیا: ' + result.message);
+      }
+    } catch (error) {
+      alert('نیٹ ورک کا مسئلہ ہے۔ دوبارہ کوشش کریں۔');
+    }
+  }
+
+  fetchBooks();
+</script>
+
+</body>
+</html>
