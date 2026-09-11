@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز - آن لائن پورٹل</title>
+  <title>Khurshid Kitab Ghar & Educational Services - Online Portal</title>
   <!-- Google Fonts & FontAwesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -19,7 +19,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); color: var(--text-main); }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); }
 
     /* Top Bar & Header */
     .top-banner { background: #0f172a; color: #cbd5e1; font-size: 13px; text-align: center; padding: 6px; }
@@ -64,11 +64,11 @@
 </head>
 <body>
 
-<div class="top-banner"><i class="fa-solid fa-truck"></i> چکوال اور گردونواح کے تمام سکولز کے لیے ہول سیل آرڈر پورٹل</div>
+<div class="top-banner"><i class="fa-solid fa-truck"></i> Wholesale Educational Supplies for Schools in Chakwal & Surrounding Areas</div>
 
 <header>
-  <h1>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز</h1>
-  <p>معیاری تعلیمی کتب اور سکول سامان کی آن لائن ہول سیل فراہمی</p>
+  <h1>Khurshid Kitab Ghar & Educational Services</h1>
+  <p>Online Wholesale Portal for Quality Textbooks & Educational Supplies</p>
 </header>
 
 <div class="main-wrapper">
@@ -76,7 +76,7 @@
   <!-- Left Side: Book Catalogue -->
   <div class="section-card">
     <div class="section-title">
-      <i class="fa-solid fa-book"></i> کتابوں کی کیٹلاگ (Book Catalogue)
+      <i class="fa-solid fa-book"></i> Book Catalogue
     </div>
     <div id="books-container" class="books-grid">
       <!-- Dynamic Content Loaded via JS -->
@@ -87,41 +87,41 @@
   <div>
     <div class="section-card">
       <div class="section-title">
-        <i class="fa-solid fa-cart-shopping"></i> منتخب کردہ سامان (Cart)
+        <i class="fa-solid fa-cart-shopping"></i> Shopping Cart
       </div>
       <div id="cart-list">
-        <p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">کوئی کتاب منتخب نہیں کی گئی۔</p>
+        <p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">No items selected.</p>
       </div>
       <div class="total-box">
-        <span>کل رقم:</span>
+        <span>Total Amount:</span>
         <span>Rs. <span id="total-amount">0</span></span>
       </div>
     </div>
 
     <div class="section-card">
       <div class="section-title">
-        <i class="fa-solid fa-file-invoice"></i> سکول کی تفصیلات
+        <i class="fa-solid fa-file-invoice"></i> School Details
       </div>
       <div class="form-group">
-        <label>سکول کا نام اور برانچ</label>
-        <input type="text" id="school-name" class="form-control" placeholder="مثال: ایم اے جناح سکول سمن آباد" required>
+        <label>School Name & Branch</label>
+        <input type="text" id="school-name" class="form-control" placeholder="e.g. M A Jinnah School Samanabad" required>
       </div>
       <div class="form-group">
-        <label>واٹس ایپ نمبر</label>
-        <input type="text" id="phone-number" class="form-control" placeholder="مثال: 923001234567" required>
+        <label>WhatsApp Number</label>
+        <input type="text" id="phone-number" class="form-control" placeholder="e.g. 923001234567" required>
       </div>
       <div class="form-group">
-        <label>ادائیگی کی مدت (Payment Period)</label>
+        <label>Payment Duration</label>
         <select id="payment-months" class="form-control">
-          <option value="1 Month Period">1 ماہ کی مدت</option>
-          <option value="2 Months Period">2 ماہ کی مدت</option>
-          <option value="3 Months Period">3 ماہ کی مدت</option>
-          <option value="4 Months Period">4 ماہ کی مدت</option>
+          <option value="1 Month Period">1 Month Period</option>
+          <option value="2 Months Period">2 Months Period</option>
+          <option value="3 Months Period">3 Months Period</option>
+          <option value="4 Months Period">4 Months Period</option>
         </select>
       </div>
 
       <button class="checkout-btn" onclick="submitOrder()">
-        <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر آرڈر کنفرم کریں
+        <i class="fa-brands fa-whatsapp"></i> Confirm Order via WhatsApp
       </button>
     </div>
   </div>
@@ -151,13 +151,13 @@
               </div>
             </div>
             <button class="add-btn" onclick="addToCart('${book.title}', ${book.price})">
-              <i class="fa-solid fa-cart-plus"></i> کارٹ میں شامل کریں
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
             </button>
           </div>
         `;
       });
     } catch (e) {
-      document.getElementById('books-container').innerText = 'ڈیٹا لوڈ کرنے میں مسئلہ پیش آیا۔';
+      document.getElementById('books-container').innerText = 'Failed to load books catalog.';
     }
   }
 
@@ -171,7 +171,7 @@
     document.getElementById('total-amount').innerText = total;
     const cartList = document.getElementById('cart-list');
     if (cart.length === 0) {
-      cartList.innerHTML = '<p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">کوئی کتاب منتخب نہیں کی گئی۔</p>';
+      cartList.innerHTML = '<p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">No items selected.</p>';
       return;
     }
     cartList.innerHTML = cart.map(item => `
@@ -188,7 +188,7 @@
     const paymentMonths = document.getElementById('payment-months').value;
 
     if (!schoolName || !phone || cart.length === 0) {
-      alert('براہ کرم سکول کا نام، واٹس ایپ نمبر درج کریں اور کم از کم ایک کتاب منتخب کریں۔');
+      alert('Please enter School Name, WhatsApp Number and select at least one item.');
       return;
     }
 
@@ -203,10 +203,10 @@
       if (result.success) {
         window.open(result.whatsappUrl, '_blank');
       } else {
-        alert('آرڈر پروسیس نہیں ہو سکا۔');
+        alert('Failed to process order.');
       }
     } catch (error) {
-      alert('نیٹ ورک کا مسئلہ ہے۔');
+      alert('Network error occurred.');
     }
   }
 
