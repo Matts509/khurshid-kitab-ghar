@@ -3,170 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز</title>
+  <title>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز - آن لائن پورٹل</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
-      --primary-color: #0d6efd;
-      --secondary-color: #198754;
-      --bg-color: #f4f6f9;
-      --accent-color: #d63384;
+      --primary-color: #1e3a8a; /* Deep Navy Blue */
+      --accent-color: #f59e0b;  /* Warm Gold */
+      --secondary-color: #10b981;/* Emerald Green */
+      --bg-color: #f1f5f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
     }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: #333;
-    }
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 15px;
-      opacity: 0.9;
-    }
-    .container {
-      max-width: 850px;
-      margin: 25px auto;
-      padding: 25px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    h2 {
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 8px;
-      color: var(--primary-color);
-      font-size: 20px;
-    }
-    .book-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .book-card {
-      border: 1px solid #e0e0e0;
-      padding: 15px;
-      border-radius: 8px;
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: calc(50% - 8px);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
-    @media (max-width: 600px) {
-      .book-card {
-        width: 100%;
-      }
-    }
-    .book-title {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: #222;
-    }
-    .book-price {
-      color: var(--accent-color);
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    button {
-      background-color: var(--secondary-color);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-    button:hover {
-      background-color: #146c43;
-    }
-    .cart-box, .checkout-box {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 2px dashed #ddd;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-    }
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-    .total-price-box {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--accent-color);
-      margin: 15px 0;
-      text-align: left;
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      font-size: 17px;
-      background-color: var(--primary-color);
-    }
-    .submit-btn:hover {
-      background-color: #0b5ed7;
-    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); color: var(--text-main); }
+
+    /* Top Bar & Header */
+    .top-banner { background: #0f172a; color: #cbd5e1; font-size: 13px; text-align: center; padding: 6px; }
+    header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 30px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    header h1 { font-size: 28px; font-weight: 700; margin-bottom: 5px; }
+    header p { opacity: 0.9; font-size: 15px; }
+
+    /* Main Container */
+    .main-wrapper { max-width: 1100px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: 1fr 340px; gap: 25px; }
+    @media (max-width: 850px) { .main-wrapper { grid-template-columns: 1fr; } }
+
+    /* Section Styling */
+    .section-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .section-title { font-size: 20px; font-weight: 600; color: var(--primary-color); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+
+    /* Book Cards Grid */
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
+    .book-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+    .book-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-color: var(--primary-color); }
+    
+    .book-img { height: 140px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #94a3b8; }
+    .book-info { padding: 12px; }
+    .book-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #0f172a; line-height: 1.3; }
+    .book-category { font-size: 12px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 12px; display: inline-block; margin-bottom: 8px; }
+    .book-price { font-size: 16px; font-weight: 700; color: #d97706; }
+
+    .add-btn { width: 100%; background: var(--secondary-color); color: white; border: none; padding: 10px; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .add-btn:hover { background: #059669; }
+
+    /* Cart & Checkout Sidebar */
+    .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+    .total-box { font-size: 18px; font-weight: 700; color: var(--primary-color); display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 2px solid #e2e8f0; }
+
+    .form-group { margin-top: 15px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #475569; }
+    .form-control { width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+    .form-control:focus { border-color: var(--primary-color); }
+
+    .checkout-btn { width: 100%; background: var(--primary-color); color: white; border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 600; margin-top: 20px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 10px rgba(30,58,138,0.2); }
+    .checkout-btn:hover { background: #1e40af; }
   </style>
 </head>
 <body>
 
+<div class="top-banner"><i class="fa-solid fa-truck"></i> چکوال اور گردونواح کے تمام سکولز کے لیے ہول سیل آرڈر پورٹل</div>
+
 <header>
   <h1>خورشید کتاب گھر اینڈ ایجوکیشنل سروسز</h1>
-  <p>سکولز آن لائن آرڈر پورٹل (چکوال)</p>
+  <p>معیاری تعلیمی کتب اور سکول سامان کی آن لائن ہول سیل فراہمی</p>
 </header>
 
-<div class="container">
-  <h2>کتابوں کی کیٹلاگ (Book Catalogue)</h2>
-  <div id="books-container" class="book-grid">کتابیں لوڈ ہو رہی ہیں...</div>
-
-  <div class="cart-box">
-    <h2>منتخب کردہ سامان (Cart)</h2>
-    <div id="cart-list">کوئی کتاب منتخب نہیں کی گئی۔</div>
-    <div class="total-price-box">کل رقم: Rs. <span id="total-amount">0</span></div>
+<div class="main-wrapper">
+  
+  <!-- Left Side: Book Catalogue -->
+  <div class="section-card">
+    <div class="section-title">
+      <i class="fa-solid fa-book"></i> کتابوں کی کیٹلاگ (Book Catalogue)
+    </div>
+    <div id="books-container" class="books-grid">
+      <!-- Dynamic Content Loaded via JS -->
+    </div>
   </div>
 
-  <div class="checkout-box">
-    <h2>سکول کی تفصیلات اور آرڈر فارم</h2>
-    <input type="text" id="school-name" placeholder="سکول کا نام اور برانچ درج کریں" required>
-    <input type="text" id="phone-number" placeholder="واٹس ایپ نمبر (مثلاً 923001234567)" required>
-    
-    <label for="payment-months"><strong>ادائیگی کا دورانیہ منتخب کریں (Payment Period):</strong></label>
-    <select id="payment-months">
-      <option value="1 Month">1 ماہ کی مدت (1 Month Period)</option>
-      <option value="2 Months">2 ماہ کی مدت (2 Months Period)</option>
-      <option value="3 Months">3 ماہ کی مدت (3 Months Period)</option>
-      <option value="4 Months">4 ماہ کی مدت (4 Months Period)</option>
-    </select>
+  <!-- Right Side: Cart & Checkout -->
+  <div>
+    <div class="section-card">
+      <div class="section-title">
+        <i class="fa-solid fa-cart-shopping"></i> منتخب کردہ سامان (Cart)
+      </div>
+      <div id="cart-list">
+        <p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">کوئی کتاب منتخب نہیں کی گئی۔</p>
+      </div>
+      <div class="total-box">
+        <span>کل رقم:</span>
+        <span>Rs. <span id="total-amount">0</span></span>
+      </div>
+    </div>
 
-    <button class="submit-btn" onclick="submitOrder()">آرڈر کنفرم کریں اور واٹس ایپ انوائس حاصل کریں</button>
+    <div class="section-card">
+      <div class="section-title">
+        <i class="fa-solid fa-file-invoice"></i> سکول کی تفصیلات
+      </div>
+      <div class="form-group">
+        <label>سکول کا نام اور برانچ</label>
+        <input type="text" id="school-name" class="form-control" placeholder="مثال: ایم اے جناح سکول سمن آباد" required>
+      </div>
+      <div class="form-group">
+        <label>واٹس ایپ نمبر</label>
+        <input type="text" id="phone-number" class="form-control" placeholder="مثال: 923001234567" required>
+      </div>
+      <div class="form-group">
+        <label>ادائیگی کی مدت (Payment Period)</label>
+        <select id="payment-months" class="form-control">
+          <option value="1 Month Period">1 ماہ کی مدت</option>
+          <option value="2 Months Period">2 ماہ کی مدت</option>
+          <option value="3 Months Period">3 ماہ کی مدت</option>
+          <option value="4 Months Period">4 ماہ کی مدت</option>
+        </select>
+      </div>
+
+      <button class="checkout-btn" onclick="submitOrder()">
+        <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر آرڈر کنفرم کریں
+      </button>
+    </div>
   </div>
+
 </div>
 
 <script>
@@ -184,15 +143,21 @@
         container.innerHTML += `
           <div class="book-card">
             <div>
-              <div class="book-title">${book.title}</div>
-              <div class="book-price">Rs. ${book.price}</div>
+              <div class="book-img"><i class="fa-solid fa-book-open"></i></div>
+              <div class="book-info">
+                <span class="book-category">${book.category || 'School Book'}</span>
+                <div class="book-title">${book.title}</div>
+                <div class="book-price">Rs. ${book.price}</div>
+              </div>
             </div>
-            <button onclick="addToCart('${book.title}', ${book.price})">کارٹ میں شامل کریں</button>
+            <button class="add-btn" onclick="addToCart('${book.title}', ${book.price})">
+              <i class="fa-solid fa-cart-plus"></i> کارٹ میں شامل کریں
+            </button>
           </div>
         `;
       });
     } catch (e) {
-      document.getElementById('books-container').innerText = 'ڈیٹا لوڈ کرنے میں مسئلہ پیش آیا۔ براہ کرم پیج ریفریش کریں۔';
+      document.getElementById('books-container').innerText = 'ڈیٹا لوڈ کرنے میں مسئلہ پیش آیا۔';
     }
   }
 
@@ -206,13 +171,13 @@
     document.getElementById('total-amount').innerText = total;
     const cartList = document.getElementById('cart-list');
     if (cart.length === 0) {
-      cartList.innerHTML = 'کوئی کتاب منتخب نہیں کی گئی۔';
+      cartList.innerHTML = '<p style="text-align: center; color: #94a3b8; font-size: 14px; padding: 20px 0;">کوئی کتاب منتخب نہیں کی گئی۔</p>';
       return;
     }
     cartList.innerHTML = cart.map(item => `
       <div class="cart-item">
         <span>${item.title}</span>
-        <span>Rs. ${item.price}</span>
+        <strong>Rs. ${item.price}</strong>
       </div>
     `).join('');
   }
@@ -223,7 +188,7 @@
     const paymentMonths = document.getElementById('payment-months').value;
 
     if (!schoolName || !phone || cart.length === 0) {
-      alert('براہ کرم سکول کا نام، واٹس ایپ نمبر درج کریں اور کم از کم ایک کتاب کارٹ میں شامل کریں۔');
+      alert('براہ کرم سکول کا نام، واٹس ایپ نمبر درج کریں اور کم از کم ایک کتاب منتخب کریں۔');
       return;
     }
 
@@ -238,10 +203,10 @@
       if (result.success) {
         window.open(result.whatsappUrl, '_blank');
       } else {
-        alert('آرڈر میں مسئلہ آیا: ' + result.message);
+        alert('آرڈر پروسیس نہیں ہو سکا۔');
       }
     } catch (error) {
-      alert('نیٹ ورک کا مسئلہ ہے۔ دوبارہ کوشش کریں۔');
+      alert('نیٹ ورک کا مسئلہ ہے۔');
     }
   }
 
